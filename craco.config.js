@@ -86,7 +86,10 @@ module.exports = function () {
           }, []),
         ].filter(Boolean),
       },
-      configure: (webpackConfig) => {
+      configure: (webpackConfig, { paths }) => {
+        const outputPath = path.resolve(__dirname, 'dist')
+        paths.appBuild = outputPath;
+        webpackConfig.output.path = outputPath;
         webpackConfig.devtool = process?.env?.WORKS_ENV === 'local' ? 'source-map' : false;
         return webpackConfig;
       },
