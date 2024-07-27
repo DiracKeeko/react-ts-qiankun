@@ -7,7 +7,21 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const type = 'pc';
 
-// console.log('process.env.WORKS_ENV->', process.env.WORKS_ENV);
+const envByOrder = process.env.REACT_APP_ENV; // dev | st | uat | prd
+const { dev, st, uat, prd } = require('./env.js');
+const getEnvObj = () => {
+  switch (envByOrder) {
+    case 'st':
+      return st;
+    case 'uat':
+      return uat;
+    case 'prd':
+      return prd;
+    default:
+      return dev;
+  }
+};
+const envObj = getEnvObj();
 
 module.exports = function () {
   return {
@@ -47,7 +61,7 @@ module.exports = function () {
       plugins: {
         add: [
           new webpack.DefinePlugin({
-            'process.env.WORKS_ENV': JSON.stringify(process.env.WORKS_ENV),
+            'process.env.WORKS_ENV': JSON.stringify(envObj.WORKS_ENV),
           }),
           // prd环境删除console.log
           when(
