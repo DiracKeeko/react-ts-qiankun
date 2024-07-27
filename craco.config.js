@@ -7,16 +7,18 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const type = 'pc';
 
+// console.log('process.env.WORKS_ENV->', process.env.WORKS_ENV);
+
 module.exports = function () {
   return {
     eslint: {
-      enable: false
+      enable: false,
     },
     style: {
       modules: {
         modules: true,
         localIdentName: '[local]_[hash:base64:5]',
-      }
+      },
     },
     ...when(type === 'pc', () => ({
       babel: {
@@ -89,5 +91,22 @@ module.exports = function () {
         },
       },
     ],
+    devServer: {
+      port: 3003,
+      // open: true,
+      hot: true,
+      client: {
+        overlay: false,
+      },
+      // 配置代理解决跨域
+      proxy: {
+        '/': {
+          changeOrigin: true,
+          pathRewrite: {
+            '^/': '',
+          },
+        },
+      },
+    },
   };
 };
