@@ -24,12 +24,12 @@ const App = () => {
             {
               key: '1',
               icon: <VideoCameraOutlined />,
-              label: <NavLink to='/vue-micro1'>vue 1 应用</NavLink>,
+              label: <NavLink to='/micro/vue-micro1'>vue 1 应用</NavLink>,
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: <NavLink to='/react-micro1'>react 1 应用</NavLink>,
+              label: <NavLink to='/micro/react-micro1'>react 1 应用</NavLink>,
             },
           ]}
         />

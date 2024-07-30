@@ -90,6 +90,7 @@ module.exports = function () {
         const outputPath = path.resolve(__dirname, 'dist')
         paths.appBuild = outputPath;
         webpackConfig.output.path = outputPath;
+        webpackConfig.output.publicPath = '/micro/';
         webpackConfig.devtool = process?.env?.WORKS_ENV === 'local' ? 'source-map' : false;
         return webpackConfig;
       },
