@@ -22,6 +22,6 @@
   },
   "include": [
     "src",
-    "./config/advancedCss.d.ts"
+    "projectConfig/advancedCss.d.ts"
   ]
 }
