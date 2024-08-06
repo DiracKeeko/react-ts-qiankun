@@ -3,7 +3,7 @@ import { Col, Image, Layout, Row, Typography } from 'antd';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import CusMenu from '@/components/layout/CusMenu';
+import CusMenu from './CusMenu';
 
 const { Text } = Typography;
 const { Header } = Layout;

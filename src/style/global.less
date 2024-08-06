@@ -1,0 +1,88 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~antd/dist/antd.less';
+@import './theme.css';
+@import './resetAntd.less';
+
+@page-min-width: 1300px;
+
+@layout-header-height: 60px;
+@layout-header-padding: 0 @padding-lg;
+@layout-footer-padding: 10px;
+
+@font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'sans-serif';
+
+html {
+  font-family: @font-family;
+  font-size: 16px;
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+#root {
+  height: 100%;
+  .no-content--big {
+    width: 25rem;
+    height: 25rem;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  min-height: min-content;
+  min-width: @page-min-width;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.primary-link {
+  color: var(--primary-color);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    text-decoration: underline;
+    opacity: 1;
+  }
+}
+
+.content {
+  background-color: #f8f9fc;
+  min-height: min-content;
+}
+
+.ant-layout {
+  height: 100%;
+}
+
+.ant-layout-header {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 20, 40, 0.3);
+  z-index: 9;
+  min-width: @page-min-width;
+}
+
+.ant-layout-footer {
+  text-align: center;
+}
+
+.ant-menu-submenu-selected > .ant-menu-submenu-title {
+  box-shadow: 0px -2px 0px var(--primary-color) inset;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.4);
+}

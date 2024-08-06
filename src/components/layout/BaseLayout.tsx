@@ -6,9 +6,8 @@ import { Outlet } from 'react-router-dom';
 import { UserInfo } from '@/api/global/constant';
 
 import CusHeader from './CusHeader';
-import logo from '@/asset/icon_investment_promotion.svg';
+import logo from '@/assets/logo-react.svg';
 import '@/style/global.less';
-
 
 const { Content, Footer } = Layout;
 
@@ -20,7 +19,7 @@ const BaseLayout: React.FC = () => {
     const oneUserInfo: UserInfo = {
       userId: '007',
       userName: '法外狂徒张三',
-      userAuthority: '1'
+      userAuthority: '1',
     };
     setUser(oneUserInfo);
   }, []);
@@ -30,11 +29,11 @@ const BaseLayout: React.FC = () => {
         <UserContext.Provider value={user}>
           <CusHeader
             icon={logo}
-            title='react-qiankun-main'
+            title='react-qiankun'
             user={`${user?.userId}/${user?.userName}`}
           />
           <Layout className={'main'}>
-            <Content className={'content'}>
+            <Content id='micro-app-container' className='content'>
               <Outlet />
             </Content>
             <Footer>一个随意的footer</Footer>
