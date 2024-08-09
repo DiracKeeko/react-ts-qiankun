@@ -9,6 +9,7 @@ import menuConfig, { ConfigType } from '@/config/menuConfig';
 
 import { judgeMenuItemType } from './constant';
 import { menuResArr } from './mockMenuData';
+import "./cusMenu.less";
 
 const generateMenuItems = (config: ConfigType[]): ItemType[] => {
   const items: ItemType[] = [];

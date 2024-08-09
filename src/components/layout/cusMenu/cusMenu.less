@@ -1,0 +1,69 @@
+.ant-menu {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  // ↓ 一级菜单的标题 (首页)
+  .ant-menu-item {
+    padding: 0;
+    background-color: transparent !important;
+    border: 0;
+  }
+  // ↓ 有弹出菜单的标题 (产品研究)
+  .ant-menu-submenu {
+    padding: 0;
+    background-color: transparent !important;
+    border: 0;
+  }
+
+  .menu-link {
+    display: block;
+    height: 60px;
+    padding: 0 20px;
+    text-decoration: none;
+  }
+}
+
+// ↓ 二级菜单css (展开的菜单窗体)
+.submenu-row {
+  display: flex;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  .submenu-col {
+    width: 170px;
+    padding: 0 15px;
+    &:first-child {
+      padding: 0 15px 0 5px;
+    }
+    &:last-child {
+      padding: 0 5px 0 15px;
+    }
+    &:only-child {
+      padding: 0;
+    }
+    // .el-menu-item {
+    //   width: 100%;
+    //   padding: 0 5px;
+    // }
+    .ant-menu-item {
+      box-sizing: border-box;
+      display: block;
+      height: 36px !important;
+      line-height: 36px !important;
+      color: #333333;
+      cursor: pointer;
+    }
+    .submenu-link {
+      font-size: 14px;
+      text-decoration: none;
+      &:hover {
+        color: #1b5fc5;
+      }
+    }
+    .submenu-holder {
+      font-size: 16px;
+      font-weight: bold;
+      cursor: default;
+      border-bottom: 2px solid #333333;
+    }
+  }
+}
