@@ -30,7 +30,7 @@
     "webpack": "^5.76.2"
   },
   "scripts": {
-    "start": "craco start",
+    "dev": "craco start",
     "build:st": "cross-env REACT_APP_ENV=st craco build",
     "build:uat": "cross-env REACT_APP_ENV=uat craco build",
     "build:prd": "cross-env REACT_APP_ENV=prd craco build"

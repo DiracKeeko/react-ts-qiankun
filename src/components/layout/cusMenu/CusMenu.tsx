@@ -88,7 +88,7 @@ function createSubMenu(menuResArr: MenuRes[]) {
             {item.menuArr.map((el, colIndex) => {
               return (
                 <div className='submenu-col' key={colIndex}>
-                  {el.map((i) => createVariousMenu(i))}
+                  {el.filter(i => i.hidden === 0).map((i) => createVariousMenu(i))}
                 </div>
               );
             })}
