@@ -61,11 +61,11 @@ function createVariousMenu(menuItem: MenuItem) {
   const { menuType, index, title, isNew } = menuItem;
   let typeItem;
   if (menuType === 'outer') {
-    typeItem = <a href={index}>{title}outer</a>;
+    typeItem = <a href={index} className='title-item'>{title}</a>;
   } else if (menuType === 'inner') {
-    typeItem = <NavLink to={index}>{title}inner</NavLink>;
+    typeItem = <NavLink to={index} className='title-item'>{title}</NavLink>;
   } else {
-    typeItem = <div className='submenu-holder'>{title}holder</div>;
+    typeItem = <div className='submenu-holder title-item'>{title}</div>;
   }
   return (
     <Item>

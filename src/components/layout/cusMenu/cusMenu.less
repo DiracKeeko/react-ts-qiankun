@@ -29,6 +29,7 @@
   background-color: #ffffff;
   border-radius: 2px;
   .submenu-col {
+    box-sizing: content-box;
     width: 170px;
     padding: 0 15px;
     &:first-child {
@@ -40,11 +41,19 @@
     &:only-child {
       padding: 0;
     }
-    // .el-menu-item {
-    //   width: 100%;
-    //   padding: 0 5px;
-    // }
+    
     .ant-menu-item {
+      height: 36px !important;
+      margin: 0;
+      .ant-menu-title-content {
+        display: block;
+      }
+    }
+    .ant-menu-item:not(:last-child) {
+      margin: 0;
+    }
+
+    .title-item {
       box-sizing: border-box;
       display: block;
       height: 36px !important;
@@ -60,6 +69,7 @@
       }
     }
     .submenu-holder {
+      box-sizing: border-box;
       font-size: 16px;
       font-weight: bold;
       cursor: default;
